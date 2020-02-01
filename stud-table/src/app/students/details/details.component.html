@@ -2,7 +2,7 @@
 <hr>
 <br>
 
-<form action="" (submit)="addStudent()">
+<form action=""  onsubmit=" this.reset();">
     <label for=""><b> Name:</b>
     </label> 
     <input type="text" [(ngModel)]="studname" name="studname">
@@ -22,22 +22,29 @@
 
 
     </div>
-    <button type="submit" (keyup.enter)="addStudent()">Add Student</button>
+    <button type="submit" (keyup.enter)="addStudent()" (click)="addStudent()">Add Student</button>
     
-
+    <button type="clear" onsubmit="this.reset();">clear</button>
 </form>
 
 <table >
     <tr >
+        <th>S.No</th>
         <th>Name</th>
         <th>Gender</th>
+        <th>Delete</th>
     </tr>
 
 
     <tr *ngFor="let student of studata">
+        <td>{{student.id}}</td>
         <td>{{student.name}}</td>
         <td>{{student.gender}}</td>
+        <td><button (click)="deleteStudent(student.id)"> Delete student </button></td>
     <tr>
+        <td>
+            rand id
+        </td>
         <td >
             sasi
         </td>

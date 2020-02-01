@@ -9,9 +9,7 @@ import { studata } from '../studata.model';
 })
 export class TableComponent implements OnInit {
   
-  studata: studata[]=[
-    new studata('ram','male')
-  ];
+  
   
   constructor() {}
 
