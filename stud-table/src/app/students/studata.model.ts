@@ -2,8 +2,8 @@ export class studata{
     public name: string;
     public gender:string;
 
-    constructor(name:string,gender:string){
-        this.name=name;
-        this.gender=gender;
+    constructor(studname:string,studgender:string){
+        this.name=studname;
+        this.gender=studgender;
     }
 }

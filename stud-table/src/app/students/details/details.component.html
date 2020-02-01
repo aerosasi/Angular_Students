@@ -11,18 +11,39 @@
     <div>
     <label for="">Gender:</label>
    
-    <input type="radio" name="gender" [(ngModel)]="gender" value="Male">
+    <input type="radio" name="gender" [(ngModel)]="studgender" value="Male">
     <label for="">Male</label>
 
-    <input type="radio" name="gender" [(ngModel)]="gender" value="Female">
+    <input type="radio" name="gender" [(ngModel)]="studgender" value="Female">
     <label for="">Female</label>
 
-    <input type="radio" name="gender" [(ngModel)]="gender" value="Trans">
+    <input type="radio" name="gender" [(ngModel)]="studgender" value="Trans">
     <label for="">Trans</label>
 
 
     </div>
-    <button type="submit">Add Student</button>
+    <button type="submit" (keyup.enter)="addStudent()">Add Student</button>
     
 
 </form>
+
+<table >
+    <tr >
+        <th>Name</th>
+        <th>Gender</th>
+    </tr>
+
+
+    <tr *ngFor="let student of studata">
+        <td>{{student.name}}</td>
+        <td>{{student.gender}}</td>
+    <tr>
+        <td >
+            sasi
+        </td>
+        <td>
+            Male
+        </td>
+    </tr>
+
+</table>

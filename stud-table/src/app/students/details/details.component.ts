@@ -8,15 +8,14 @@ import { studata } from '../studata.model';
 })
 export class DetailsComponent implements OnInit {
  
-   studata:studata[]=[];
-   studname;
-   gender;
-
+  studata:studata[];
+  studname;
+  studgender;
    games=[];
   constructor() {
 
     this.games = [{
-      game : "Deus Ex: Mankind Divided",
+      name : "Deus Ex: Mankind Divided",
       platform: " Xbox One, PS4, PC",
       release : "August 23"
   },
@@ -36,17 +35,34 @@ export class DetailsComponent implements OnInit {
       release : "August 23"
   }]
 
+  this.studata=[{
+    name:"ram",
+    gender:"male"
+  }]
+  
+
    }
 
   ngOnInit() {
+
+   
   }
 
  addStudent(){
-   console.log(this.studname + this.gender);
-   this.studata.push(
-     {name:this.studname,gender:this.gender}
+  console.log(this.studname + this.studgender);
+    this.studata.push({
+      name: this.studname,
+      gender: this.studgender 
+    })
+    console.log(studata);
+    
    
-   )
+
+  //  
+  //  this.studata.push(
+  //    {name:this.name,gender:this.gender}
+   
+  //  )
  }
 
 }
