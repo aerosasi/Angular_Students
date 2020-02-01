@@ -2,23 +2,27 @@
 <hr>
 <br>
 
-<form action="">
-    <label for=""><b> Name:</b></label> <input type="text"> <br>
+<form action="" (submit)="addStudent()">
+    <label for=""><b> Name:</b>
+    </label> 
+    <input type="text" [(ngModel)]="studname" name="studname">
+    <br>
    
     <div>
     <label for="">Gender:</label>
    
-    <input type="radio" name="gender" value="Male">
+    <input type="radio" name="gender" [(ngModel)]="gender" value="Male">
     <label for="">Male</label>
 
-    <input type="radio" name="gender" value="Female">
+    <input type="radio" name="gender" [(ngModel)]="gender" value="Female">
     <label for="">Female</label>
 
-    <input type="radio" name="gender" value="Trans">
+    <input type="radio" name="gender" [(ngModel)]="gender" value="Trans">
     <label for="">Trans</label>
 
 
     </div>
-
+    <button type="submit">Add Student</button>
+    
 
 </form>

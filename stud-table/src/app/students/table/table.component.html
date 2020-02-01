@@ -4,6 +4,10 @@
         <th>Gender</th>
     </tr>
 
+
+    <tr *ngFor="let student of studata">
+        <td>{{student.name}}</td>
+        <td>{{student.gender}}</td>
     <tr>
         <td >
             sasi
@@ -12,4 +16,5 @@
             Male
         </td>
     </tr>
+
 </table>

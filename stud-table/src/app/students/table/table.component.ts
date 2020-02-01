@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { studata } from '../studata.model';
+
 
 @Component({
   selector: 'app-table',
@@ -6,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-
-  constructor() { }
+  
+  studata: studata[]=[
+    new studata('ram','male')
+  ];
+  
+  constructor() {}
 
   ngOnInit() {
   }

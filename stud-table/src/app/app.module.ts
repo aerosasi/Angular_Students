@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { StudentsComponent } from './students/students.component';
 import { DetailsComponent } from './students/details/details.component';
 import { TableComponent } from './students/table/table.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { TableComponent } from './students/table/table.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
