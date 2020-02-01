@@ -11,6 +11,8 @@ export class DetailsComponent implements OnInit {
   studata:studata[];
   studname;
   studgender;
+  studDept;
+  studDesc;
   rid=1;
    games=[];
   constructor() {
@@ -39,7 +41,9 @@ export class DetailsComponent implements OnInit {
   this.studata=[{
     id:1,
     name:"ram",
-    gender:"male"
+    gender:"Male",
+    dept:"IT",
+    desc:"Good in Data Science and Handball"
   }]
   
 
@@ -55,7 +59,9 @@ export class DetailsComponent implements OnInit {
     this.studata.push({
       id:this.rid+1,
       name: this.studname,
-      gender: this.studgender 
+      gender: this.studgender,
+      dept:this.studDept,
+      desc:this.studDesc 
     })
     this.rid++;
     console.log(this.studata);
@@ -71,6 +77,14 @@ export class DetailsComponent implements OnInit {
 
  deleteStudent(id: number): void {
   this.studata = this.studata.filter(studata => studata.id !== id);
+}
+
+updateStudent(id:number,name:string,gender:string,dept:string,desc:String){
+  this.studname=name;
+  this.studgender=gender;
+  this.studDept=dept;
+  this.studDesc=desc;
+
 }
 
 }
