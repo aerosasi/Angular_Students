@@ -1,8 +1,8 @@
 <h1>Fill the students details form</h1>
 <hr>
 <br>
-
-<form action=""  onsubmit=" this.reset();">
+<div class="form">
+<form action=""  onsubmit=" this.reset();" #myForm="ngForm" >
     <label for=""><b> Name:</b>
     </label> 
     <input type="text" [(ngModel)]="studname" name="studname">
@@ -30,17 +30,23 @@
         <option  name="dept" value="MECH">MECH</option>
       </select>
       <br>
+      <label for="">Description:</label>
+      <br>  
       <textarea [(ngModel)]="studDesc" name="studDesc" rows="10" cols="30">
       </textarea>
         <br>
        <label for="">Agree to License :</label> <input type="checkbox" name="" id="" >
         <br>
-    <button type="submit" (keyup.enter)="addStudent()" (click)="addStudent()">Add Student</button>
+    <button  *ngIf="show; else elseBlock"
+        type="submit" (keyup.enter)="addStudent()" (click)="addStudent()">Add Student</button>
+    <ng-template #elseBlock><button type="submit"  (keyup.enter)="updateaddStudent(myForm)" (click)="updateaddStudent(myForm)">Add Student</button></ng-template> 
     
     <button type="clear" onsubmit="this.reset();">clear</button>
 </form>
+</div>
 
-<table >
+
+<table style="text-align:center;">
     <tr >
         <th>S.No</th>
         <th>Name</th>

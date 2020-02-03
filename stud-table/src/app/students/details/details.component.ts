@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { studata } from '../studata.model';
+import { BindingFlags } from '@angular/compiler/src/core';
+import { Form, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-details',
@@ -8,12 +10,14 @@ import { studata } from '../studata.model';
 })
 export class DetailsComponent implements OnInit {
  
+  show: boolean = true;
   studata:studata[];
   studname;
   studgender;
   studDept;
   studDesc;
   rid=1;
+  uid;
    games=[];
   constructor() {
 
@@ -65,14 +69,6 @@ export class DetailsComponent implements OnInit {
     })
     this.rid++;
     console.log(this.studata);
-    
-   
-
-  //  
-  //  this.studata.push(
-  //    {name:this.name,gender:this.gender}
-   
-  //  )
  }
 
  deleteStudent(id: number): void {
@@ -80,11 +76,24 @@ export class DetailsComponent implements OnInit {
 }
 
 updateStudent(id:number,name:string,gender:string,dept:string,desc:String){
+  
+ 
+  this.show=false;
   this.studname=name;
   this.studgender=gender;
   this.studDept=dept;
   this.studDesc=desc;
 
+  this.uid=id;
+
+}
+
+updateaddStudent(form:NgForm) { 
+  this.show=true;
+  this.studata[this.uid-1].name=this.studname;
+  this.studata[this.uid-1].gender=this.studgender;
+  console.log(this.studata);
+  form.reset();
 }
 
 }
