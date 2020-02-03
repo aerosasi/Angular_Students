@@ -18,31 +18,9 @@ export class DetailsComponent implements OnInit {
   studDesc;
   rid=1;
   uid;
-   games=[];
+  
   constructor() {
-
-    this.games = [{
-      name : "Deus Ex: Mankind Divided",
-      platform: " Xbox One, PS4, PC",
-      release : "August 23"
-  },
-  {
-      game : "Hue",
-      platform: " Xbox One, PS4, Vita, PC",
-      release : "August 23"
-  },
-  {
-      game : "The Huntsman: Winter's Curse",
-      platform: "PS4",
-      release : "August 23"
-  },
-  {
-      game : "The Huntsman: Winter's Curse",
-      platform: "PS4",
-      release : "August 23"
-  }]
-
-  this.studata=[{
+ this.studata=[{
     id:1,
     name:"ram",
     gender:"Male",
@@ -92,6 +70,8 @@ updateaddStudent(form:NgForm) {
   this.show=true;
   this.studata[this.uid-1].name=this.studname;
   this.studata[this.uid-1].gender=this.studgender;
+  this.studata[this.uid-1].desc=this.studDesc;
+  this.studata[this.uid-1].dept=this.studDept;
   console.log(this.studata);
   form.reset();
 }
