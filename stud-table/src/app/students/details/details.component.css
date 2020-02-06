@@ -6,7 +6,12 @@ table, th, td {
   th, td {
     padding: 15px;
   }
-  
+
+  table{
+    margin-left:auto; 
+    margin-right:auto;
+  }
+
 
   div.form
   {
@@ -19,16 +24,22 @@ table, th, td {
       margin-left: auto;
       margin-right: auto;
       text-align: left;
-  }
+      padding-bottom: 15px;
+      
 
-  table{
-    margin-left:auto; 
-    margin-right:auto;
-  }
-
+    }
+ .name{
+   width: 78%;
+ }
+ .drop{
+   width: 63%;
+ }
+  
   h1{
     margin-left:auto; 
     margin-right: auto;
     text-align: center;
 
   }
+
+  

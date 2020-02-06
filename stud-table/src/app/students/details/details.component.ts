@@ -13,6 +13,7 @@ export class DetailsComponent implements OnInit {
   update: boolean = false;
   studata:studata[];
   studname;
+  studAgg;
   studgender;
   studDept;
   studDesc;
@@ -33,12 +34,17 @@ export class DetailsComponent implements OnInit {
   }
 
  addStudent(form:NgForm){
-  console.log(this.studname + this.studgender);
-  console.log(this.update);
+  if (!form.valid) {
+    alert("Enter All the Feilds");
+  }
+  else{
+  // console.log(this.studname + this.studgender);
+  // console.log(this.update);
   
    if(this.update==false)   //Insertion part
    {
     this.studata.push({
+
       id:this.rid+1,
       name: this.studname,
       gender: this.studgender,
@@ -59,6 +65,7 @@ export class DetailsComponent implements OnInit {
     console.log(this.studata);
      form.reset();
   }
+}
  
  }
 

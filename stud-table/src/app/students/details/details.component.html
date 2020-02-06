@@ -5,7 +5,7 @@
 <form action=""  (ngSubmit)="addStudent(myForm)" #myForm="ngForm" >
     <label for=""><b> Name:</b>
     </label> 
-    <input type="text" [(ngModel)]="studname" name="studname" >
+    <input type="text" class="name" [(ngModel)]="studname" name="studname" required>
     <br>
    
     <div>
@@ -22,8 +22,8 @@
     </div>
     <label for="">Department :</label>
    
-    <select  name="dept" [(ngModel)]="studDept" >
-        <option value="" name="dept"disabled selected>DEPT</option>
+    <select class="drop" name="dept" [(ngModel)]="studDept"  required>
+        <option value="" name="dept" disabled selected>DEPT</option>
         <option  name="dept" value="IT"  >IT</option>
         <option  name="dept" value="CSE" >CSE</option>
         <option  name="dept" value="ECE" >ECE</option>
@@ -32,17 +32,18 @@
       <br>
       <label for="">Description:</label>
       <br>  
-      <textarea [(ngModel)]="studDesc" name="studDesc" rows="10" cols="30">
+      <textarea [(ngModel)]="studDesc" name="studDesc" rows="10" cols="30" required>
       </textarea>
         <br>
-       <label for="">Agree to License :</label> <input type="checkbox" name="" id="" >
+       <label for="" >Agree to License :</label> <input type="checkbox" name="studAgg" [(ngModel)]="studAgg" id="" required>
         <br>
-    <button  
-        type="submit">Add Student</button>
-    <button type="clear" onsubmit="this.reset();">clear</button>
+    <button type="submit" style="margin-left: 30px; margin-right:40px; padding:auto auto ;">Submit</button>
+    <button type="clear"   (onclickS)="this.reset();">Clear</button>
 </form>
 </div>
-
+<h1>Students Table </h1>
+<hr>
+<br>
 
 <table style="text-align:center;">
     <tr >
