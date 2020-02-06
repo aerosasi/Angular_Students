@@ -2,16 +2,16 @@
 <hr>
 <br>
 <div class="form">
-<form action=""  onsubmit=" this.reset();" #myForm="ngForm" >
+<form action=""  (ngSubmit)="addStudent(myForm)" #myForm="ngForm" >
     <label for=""><b> Name:</b>
     </label> 
-    <input type="text" [(ngModel)]="studname" name="studname">
+    <input type="text" [(ngModel)]="studname" name="studname" >
     <br>
    
     <div>
     <label for="">Gender:</label>
    
-    <input type="radio" name="gender" [(ngModel)]="studgender" value="Male">
+    <input type="radio" name="gender" [(ngModel)]="studgender" value="Male" required>
     <label for="">Male</label>
 
     <input type="radio" name="gender" [(ngModel)]="studgender" value="Female">
@@ -37,10 +37,8 @@
         <br>
        <label for="">Agree to License :</label> <input type="checkbox" name="" id="" >
         <br>
-    <button  *ngIf="show; else elseBlock"
-        type="submit" (keyup.enter)="addStudent()" (click)="addStudent()">Add Student</button>
-    <ng-template #elseBlock><button type="submit"  (keyup.enter)="updateaddStudent(myForm)" (click)="updateaddStudent(myForm)">Add Student</button></ng-template> 
-    
+    <button  
+        type="submit">Add Student</button>
     <button type="clear" onsubmit="this.reset();">clear</button>
 </form>
 </div>
@@ -49,6 +47,7 @@
 <table style="text-align:center;">
     <tr >
         <th>S.No</th>
+        <th>Roll</th>
         <th>Name</th>
         <th>Gender</th>
         <th>dept</th>
@@ -58,13 +57,13 @@
     </tr>
 
 
-    <tr *ngFor="let student of studata">
+    <tr *ngFor="let student of studata;let i = index">
+        <td>{{i+1}}</td>
         <td>{{student.id}}</td>
         <td>{{student.name}}</td>
         <td>{{student.gender}}</td>
         <td>{{student.dept}}</td>
         <td>{{student.desc}}</td>
-        <td><button (click)="updateStudent(student.id,student.name,student.gender,student.dept,student.desc)">Update</button></td>
+        <td><button (click)="updateStudent(i+1,student.name,student.gender,student.dept,student.desc)">Update</button></td>
         <td><button (click)="deleteStudent(student.id)"> Delete student </button></td>
-
 </table>
