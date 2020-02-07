@@ -8,6 +8,7 @@ import { StudentsComponent } from './students/students.component';
 import { DetailsComponent } from './students/details/details.component';
 import { TableComponent } from './students/table/table.component';
 import { FormsModule } from '@angular/forms';
+import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     StudentsComponent,
     DetailsComponent,
-    TableComponent
+    TableComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

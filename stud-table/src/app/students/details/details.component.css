@@ -1,18 +1,25 @@
-table, th, td {
-    border: 1px solid black;
+  
+  body{ 
+    color:black;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+  }
+    
+  .name{
+    width: 78%;
+  }
+  .drop{
+    width: 60%;
+  }
+  .desc{
+    width: 97%;
+  }
+  
    
-  }
-
-  th, td {
-    padding: 15px;
-  }
-
-  table{
-    margin-left:auto; 
-    margin-right:auto;
-  }
-
-
+   h1{
+     margin-left:auto; 
+     margin-right: auto;
+     text-align: center;
+   }
   div.form
   {
       display: block;
@@ -26,20 +33,51 @@ table, th, td {
       text-align: left;
       padding-bottom: 15px;
       
-
     }
- .name{
-   width: 78%;
- }
- .drop{
-   width: 63%;
- }
+    p{
+      text-align: center;
+      padding-bottom: 0% !important;
+      margin-bottom: 0%;
+    }
+
+    .btns{
+      padding-top:1px;
+      margin-top: 0%;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+     
+    }
   
-  h1{
-    margin-left:auto; 
-    margin-right: auto;
-    text-align: center;
+    th, td {
+      padding: 13px;
+    }
+  
+    table{
+      margin-left:auto; 
+      margin-right:auto;
+    }
+
+  img{
+    margin: 0px;
+    padding:0px !important;
+  
+    cursor: pointer;
+  }
+
+  .update-icn{  
+    height: 25px !important;
+    width: 30px;
+  }
+
+  .delete-icn{
+    height: 30px !important;
+    width: 30px;
 
   }
 
   
+
+ 
+

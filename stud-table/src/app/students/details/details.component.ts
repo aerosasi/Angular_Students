@@ -19,11 +19,12 @@ export class DetailsComponent implements OnInit {
   studDesc;
   rid=101;  //Change this if changing initial record
   uid;
+  incomp:boolean=false;
 
   constructor() {
  this.studata=[{
     id:101,
-    name:"ram",
+    name:"Ram",
     gender:"Male",
     dept:"IT",
     desc:"Good in Data Science and Handball"
@@ -35,9 +36,11 @@ export class DetailsComponent implements OnInit {
 
  addStudent(form:NgForm){
   if (!form.valid) {
-    alert("Enter All the Feilds");
+    // alert("Enter All the Feilds");
+    this.incomp=true;
   }
   else{
+    this.incomp=false;
   // console.log(this.studname + this.studgender);
   // console.log(this.update);
   
