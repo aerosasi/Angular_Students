@@ -59,6 +59,9 @@
 <br>
 
 <table style="text-align:center;">
+    <tr>
+        
+    </tr>
     <tr >
         <th>S.No</th>
         <th>Roll</th>
@@ -71,7 +74,8 @@
     </tr>
 
 
-    <tr *ngFor="let student of studata;let i = index">
+    <tr *ngFor="let student of studata;let i = index " >
+        
         <td>{{i+1}}</td>
         <td>{{student.id}}</td>
         <td>{{student.name}}</td>
@@ -81,5 +85,32 @@
         <td><img class="update-icn" src="assets/update.png" (click)="updateStudent(i+1,student.name,student.gender,student.dept,student.desc)"></td>
         <td ><img  class="delete-icn" src="assets/delete.png" (click)="deleteStudent(student.id)" ></td>
 </table>
+
+<div class="searchitems"> 
+    <p>Enter Roll no to search student :</p>
+    <br>    
+    <input  class="searchbox" type="text" name="search" [(ngModel)]="searchid" (keyup.enter)="searchStudent(searchid) "  placeholder="Search..">
+    <button (keyup.enter)="searchStudent(searchid) " (click)="searchStudent(searchid) ">Search</button>
+    <button (click)="clearSearch()" >Clear</button>
+</div>
+ <div *ngIf="searchToggle">
+     <table>
+         <tr>
+             <td>Name:</td>
+             <td>{{searchName}}</td>
+         </tr>
+         <tr>
+            <td>Gender:</td>
+            <td>{{searchGen}}</td>
+        </tr><tr>
+            <td>Department:</td>
+            <td>{{searchDept}}</td>
+        </tr><tr>
+            <td>Description:</td>
+            <td>{{searchDesc}}</td>
+        </tr>
+     </table>
+       
+</div>
 </body>
 </html>

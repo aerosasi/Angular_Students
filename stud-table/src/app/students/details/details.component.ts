@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { studata } from '../studata.model';
-import { BindingFlags } from '@angular/compiler/src/core';
 import { Form, NgForm } from '@angular/forms';
 
 @Component({
@@ -17,11 +16,17 @@ export class DetailsComponent implements OnInit {
   studgender;
   studDept;
   studDesc;
-  rid=101;  //Change this if changing initial record
+  searchid;
+  searchName;
+ searchGen;
+ searchDept;
+ searchDesc;
+ searchToggle:boolean=false;
+ rid=101;  //Change this if changing initial record
   uid;
   incomp:boolean=false;
 
-  constructor() {
+ constructor() {
  this.studata=[{
     id:101,
     name:"Ram",
@@ -88,5 +93,21 @@ updateStudent(id:number,name:string,gender:string,dept:string,desc:String){
   this.studDesc=desc;
   this.uid=id;
 }
+
+searchStudent(sid:number){
+  console.log(this.searchName=this.studata.find(studata => studata.id == sid).name);
+  this.searchName=this.studata.find(studata => studata.id == sid).name;
+ this.searchGen=this.studata.find(studata => studata.id == sid).gender;
+ this.searchDept=this.studata.find(studata => studata.id == sid).dept;
+ this.searchDesc=this.studata.find(studata => studata.id == sid).desc;
+  this.searchToggle=true;
+ console.log(sid);
+}
+
+clearSearch(){
+  this.searchid="";
+  this.searchToggle=false;
+}
+
 }
 

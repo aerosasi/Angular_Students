@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { StudentsComponent } from './students/students.component';
 import { DetailsComponent } from './students/details/details.component';
-import { TableComponent } from './students/table/table.component';
 import { FormsModule } from '@angular/forms';
 import { NavComponent } from './nav/nav.component';
 
@@ -17,7 +16,6 @@ import { NavComponent } from './nav/nav.component';
     HomeComponent,
     StudentsComponent,
     DetailsComponent,
-    TableComponent,
     NavComponent
   ],
   imports: [
